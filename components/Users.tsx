@@ -11,7 +11,7 @@ const Users = ({users}:any) => {
         }
 
         const resp = await axios.post(`${server}/api/users/add`, formData)
-            .then(function (rep) {console.log(rep)})
+            .then(function (rep) {console.log(rep); alert('User added successfully.');})
             .catch(function (error) {console.log(error)})
     }
     return (
