@@ -1,7 +1,9 @@
 import axios from 'axios'
 import UsersList from './UsersList'
 import { server } from '../lib/config'
+import { useState } from 'react'
 const Users = ({users}:any) => {
+    const [userX, setUsers] = useState(users);
     const postSubmit = async (event:any) => {
         event.preventDefault()
         const formData = {
@@ -11,7 +13,13 @@ const Users = ({users}:any) => {
         }
 
         const resp = await axios.post(`${server}/api/users/add`, formData)
-            .then(function (rep) {console.log(rep); alert('User added successfully.');})
+            .then(function (rep) { 
+                setUsers(rep.data.user);
+                event.target.name.value = '';
+                event.target.twitter.value = '';
+                event.target.hobbies.value = '';
+                alert('User added successfully.');
+            })
             .catch(function (error) {console.log(error)})
     }
     return (
@@ -37,7 +45,7 @@ const Users = ({users}:any) => {
             </div>
             </div>
 
-            <UsersList users={users}/>
+            <UsersList users={userX}/>
         </>
     )
 }
