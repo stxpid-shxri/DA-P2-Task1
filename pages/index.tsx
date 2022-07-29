@@ -3,7 +3,7 @@ import { server } from '../lib/config'
 import Users from '../components/Users'
 import axios from 'axios'
 
-const Home: NextPage = ({users}) => {
+const Home: NextPage = ({users}:any) => {
   return (
     <Users users={users}/>
   )

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import UsersList from './UsersList'
 import { server } from '../lib/config'
-const Users = ({users}) => {
+const Users = ({users}:any) => {
     const postSubmit = async (event:any) => {
         event.preventDefault()
         const formData = {

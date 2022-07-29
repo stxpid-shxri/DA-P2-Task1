@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UsersList = ({users}) => {
+const UsersList = ({users}:any) => {
   return (
     <>
       <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
@@ -19,7 +19,7 @@ const UsersList = ({users}) => {
                 </tr>
             </thead>
             <tbody>
-                {users.map((user) => (
+                {users.map((user:any) => (
                   <tr className="bg-white odd:bg-white even:bg-slate-50 dark:bg-gray-900 dark:border-gray-700" key={user._id}>
                     <td className="py-4 px-6">
                         {user.name}

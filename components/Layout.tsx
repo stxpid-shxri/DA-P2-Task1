@@ -1,5 +1,5 @@
 import Nav from "./Nav"
-const Layout = ({children}) => {
+const Layout = ({children}:any) => {
 
   const styling = {
     backgroundImage: `url('/blackhole.jpg')`,
