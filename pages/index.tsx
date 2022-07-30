@@ -11,6 +11,7 @@ const Home: NextPage = ({users}:any) => {
 
 export async function getServerSideProps() {
   let users;
+  console.log('test');
   const res = await axios.get(`${server}/api/users`).then(res1=> {
     users = res1.data;
   })
